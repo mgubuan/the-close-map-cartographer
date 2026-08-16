@@ -1,0 +1,5 @@
+workspace_id,period,control,status,owner,evidence
+CRHS-042,2026-07,uncategorized transactions,complete,Senior Bookkeeper,QBO uncategorized report
+CRHS-042,2026-07,duplicate review,complete,Senior Bookkeeper,QBO transaction detail
+CRHS-042,2026-07,wrong-period review,complete,Senior Bookkeeper,QBO transaction detail
+CRHS-042,2026-07,owner transactions,one disclosed question,Senior Bookkeeper,exception register

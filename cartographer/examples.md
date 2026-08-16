@@ -1,62 +1,60 @@
 # Worked Map: Demo Bookkeeping Close
 
-This is one worked map of a privacy-safe July monthly-close territory for a fictional home-services client. Its identities and values are synthetic; its operating handoffs reflect recurring bookkeeping work. The subject source remains authoritative.
+This worked map uses a privacy-safe July close for a fictional home-services client. Source records remain authoritative.
 
 ## Catalog
 
 | Change intent | Open first |
 |---|---|
-| Change where evidence arrives | `map/objects/bookkeeping/source-document.md` |
-| Change missing-information ownership | `map/objects/bookkeeping/exception.md` |
-| Change the review handoff | `map/objects/bookkeeping/review-packet.md` |
-| Change what counts as approved | `map/objects/bookkeeping/approval.md` |
-| Decide whether an old tracker is live | `map/objects/bookkeeping/missing-documents-tracker.md` |
+| Change required records or deadlines | `map/objects/bookkeeping/client-records-ready.md` |
+| Change transaction review | `map/objects/bookkeeping/transaction-completion.md` |
+| Change reconciliation frequency | `map/objects/bookkeeping/account-reconciliation.md` |
+| Add a balance tie-out | `map/objects/bookkeeping/key-balance-verification.md` |
+| Change manual-entry rules | `map/objects/bookkeeping/month-end-entry.md` |
+| Change review thresholds | `map/objects/bookkeeping/bookkeeping-review.md` |
+| Change report delivery or reopening | `map/objects/bookkeeping/report-delivery.md` |
 
-## Card excerpt: Source Document
-
-- **Universe:** live
-- **Source:** `demo-territory/client-workspace/intake-rules.md`
-- **Hits:** intake location, identity, duplicate detection, missing-evidence exceptions, review-packet evidence links.
-- **Does not hit:** chart of accounts, reconciliation logic, approval threshold, report format.
-
-## Card excerpt: Review Packet
+## Card excerpt: Client Records Ready
 
 - **Universe:** live
-- **Source:** `demo-territory/client-workspace/review-packet-2026-07.md`
-- **Hits:** packet schema, preparer handoff, reviewer view, approval target.
-- **Does not hit:** raw intake backlog, unrelated periods, source-document contents.
+- **Source:** `demo-territory/client-workspace/close-checklist-2026-07.md`
+- **Hits:** request schedule, reminders, missing-record ownership, reconciliation start, close target.
+- **Does not hit:** transaction categories, review thresholds, prior delivered reports.
 
-## Ghost card: Missing Documents Tracker
+## Card excerpt: Report Delivery
+
+- **Universe:** live
+- **Source:** `demo-territory/client-workspace/close-delivery-register.csv`
+- **Hits:** approval, recipients, versioning, reopen log, client notification.
+- **Does not hit:** other clients, unchanged reports, unrelated periods.
+
+## Ghost card: Old Close Checklist
 
 - **Universe:** ghost
-- **Evidence:** retained file note plus the current intake rule.
-- **Why:** the workbook still has an authoritative name, but no live control writes it, reads it, or decides from it.
+- **Evidence:** the archive note names no current writer, reader, or downstream decision.
 - **Hits:** nothing in the live close workflow.
 
 ## One change
 
-Question: What moves if statements stop arriving by email and start arriving through the portal?
+Question: What moves if low-risk accounts change from monthly to quarterly reconciliation?
 
 ```text
-Primary card: Source Document
+Primary card: Account Reconciliation
 
 HITS
-- intake location and permissions
-- document identity and naming
-- duplicate detection
-- missing-document exception creation
-- review-packet source links
+- account risk classification
+- monthly close checklist
+- quarterly schedule
+- reviewer visibility
 
 DOES NOT HIT
-- chart of accounts
-- reconciliation rules
-- reviewer approval threshold
-- financial-report format
+- bank and credit-card monthly rules
+- transaction categorization
+- report recipients
 
 OPEN NEXT ONLY IF
-- ownership changes → Exception
-- evidence presented to review changes → Review Packet
+- a supported balance changes -> Key Balance Verification
 
 STOP
-- stop when intake, identity, duplicate, exception, and review-link consequences are known
+- stop when eligible accounts, risk limits, approval, due dates, and return-to-monthly rule are explicit
 ```

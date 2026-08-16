@@ -1,0 +1,4 @@
+workspace_id,period,entry_type,status,support,approver
+CRHS-042,2026-07,recurring depreciation,posted,fixed asset schedule,CAS Manager
+CRHS-042,2026-07,prepaid amortization,posted,prepaid schedule,CAS Manager
+CRHS-042,2026-07,loan interest split,posted,loan statement,CAS Manager

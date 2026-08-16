@@ -1,0 +1,4 @@
+workspace_id,period,account_type,status,preparer,reviewer,evidence
+CRHS-042,2026-07,operating bank,reviewed,Senior Bookkeeper,Cash statement and reconciliation
+CRHS-042,2026-07,credit card,reviewed,Senior Bookkeeper,Credit-card statement and reconciliation
+CRHS-042,2026-07,loan,reviewed,Senior Bookkeeper,Loan statement and rollforward
