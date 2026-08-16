@@ -5,6 +5,7 @@ universe: live
 status: verified
 verified_on: 2026-08-16
 revision: monthly-close-v2
+source_revision: fd52389ac7ddf95244ad93f039573b402e900e56
 entity: demo-territory/client-workspace/reconciliation-register-2026-07.csv
 ---
 

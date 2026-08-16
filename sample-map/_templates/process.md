@@ -4,6 +4,7 @@ universe: live
 status: stub
 verified_on:
 revision:
+source_revision:
 consumes: []
 produces: []
 ---
@@ -12,17 +13,21 @@ produces: []
 
 One sentence naming the real movement.
 
-## Input
+## Input → Movement → Output
 
-- Linked object.
+**Input:** Linked object.
 
-## Movement
+**Movement:** The proven movement.
+
+**Output:** Linked object.
+
+## Why this shape
+
+The load-bearing reason this is one movement.
+
+## Steps
 
 1. Cited step.
-
-## Output
-
-- Linked object.
 
 ## If you change this
 
@@ -38,4 +43,3 @@ One sentence naming the real movement.
 ## See
 
 - Source: `path`
-

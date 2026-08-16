@@ -5,6 +5,7 @@ universe: live
 status: stub
 verified_on:
 revision:
+source_revision:
 entity:
 ---
 
@@ -41,4 +42,3 @@ The load-bearing reason, not a field tour.
 ## See
 
 - Source: `path`
-

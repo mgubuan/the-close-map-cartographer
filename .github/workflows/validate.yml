@@ -1,16 +1,25 @@
-name: Validate the map
+name: Validate Close Map
 
 on:
   push:
   pull_request:
-  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python validate_close_map.py
+      - name: Verify generated files are current
+        run: |
+          python generate_close_map.py
+          git diff --exit-code
+      - name: Validate package
+        run: python validate_close_map.py

@@ -21,11 +21,15 @@ This privacy-safe territory is a sanitized composite of recurring monthly-close 
 - Payroll provider: payroll register and cash-requirement report
 - Merchant processor: settlement report
 
-## Live controls
+## Superseded intake-and-packet model
 
-- `source-document-index.csv` is the evidence identity and receipt log.
-- `exception-register.csv` is the live missing-item and clarification queue.
-- `review-packet-2026-07.md` is the bounded preparer-to-reviewer handoff.
-- `approval-register.csv` is the only approval authority.
+This manifest records the workspace's earlier document-intake and review-packet design. It is retained so a bookkeeper can recognize older files, but it is not the current close route.
+
+- `source-document-index.csv` was the document-level receipt log.
+- `exception-register.csv` was the missing-item and clarification queue.
+- `review-packet-2026-07.md` was the preparer-to-reviewer handoff.
+- `approval-register.csv` was the packet approval log.
+
+For the current monthly close, start with `close-checklist-2026-07.md`. Its seven completion gates and the named supporting records are the live controls. The older files above remain useful history and must not be used to infer current status.
 
 The workspace boundary includes only records carrying both `CRHS-042` and `2026-07`. Client values, credentials, tax IDs, full account numbers, and actual documents are deliberately absent.

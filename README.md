@@ -81,12 +81,15 @@ test-results.md
 ## Verify the package
 
 ```bash
+python generate_close_map.py
 python validate_close_map.py
 ```
 
-This checks that every workflow page points to a real source, the current and retired records are clearly distinguished, navigation files agree, and the package contains no prohibited public references.
+The generator rebuilds the noun index and navigation twins from their canonical sources. The validator checks that every workflow page points to a real source snapshot, the current, retained, and retired records are clearly distinguished, generated files have not drifted, and the package contains no prohibited public references.
 
 The documented [cold-reader walkthrough](audit/01-cold-reader-walkthrough.md) records both an initial over-reading failure and the successful retest after explicit next-card gates and stopping rules were added.
+
+The broader [architecture walk tests](audit/03-architecture-walk-tests.md) exercise seven common lookup and change questions and record the bounded reading path for each.
 
 The example is educational workflow infrastructure, not accounting, tax, payroll, or legal advice. Decisions outside the bookkeeping engagement should go to the designated CPA, controller, payroll specialist, or client approver.
 

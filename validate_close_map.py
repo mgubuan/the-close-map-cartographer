@@ -4,12 +4,14 @@ from __future__ import annotations
 
 from pathlib import Path
 import re
+import subprocess
 
 ROOT = Path(__file__).resolve().parent
 FACTORY = ROOT / "cartographer"
 MAP = ROOT / "sample-map"
 SUBJECT = ROOT / "demo-territory"
 REVISION = "monthly-close-v2"
+SOURCE_REVISION = "fd52389ac7ddf95244ad93f039573b402e900e56"
 
 
 def fail(message: str) -> None:
@@ -49,8 +51,14 @@ def expected_index(cards: list[Path]) -> str:
         rows.append((title.group(1), meta["universe"], meta["status"], card.relative_to(MAP / "objects").as_posix()))
     body = "# Noun Index\n\n| Noun | Universe | Status | Card |\n|---|---|---|---|\n"
     body += "".join(f"| {name} | {universe} | {status} | `{path}` |\n" for name, universe, status, path in sorted(rows))
-    body += "\nThis index is generated from card frontmatter by `validate_close_map.py`; do not add payload here.\n"
+    body += "\nGenerated from object frontmatter by `generate_close_map.py`; do not edit by hand.\n"
     return body
+
+
+def git(*args: str) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(
+        ["git", *args], cwd=ROOT, text=True, capture_output=True, check=False
+    )
 
 
 def validate_factory() -> None:
@@ -73,6 +81,8 @@ def validate_entry_and_contracts() -> None:
         fail("CLAUDE.md, AGENTS.md, and routing.md must be byte-identical")
     if len(entries[0].splitlines()) > 60:
         fail("entry catalog exceeds 60 lines")
+    if git("diff", "--exit-code", "--", "sample-map/AGENTS.md", "sample-map/routing.md").returncode:
+        fail("generated entry twins have uncommitted manual edits; run generate_close_map.py")
     for marker in ["CONTEXT.md", "objects/_index.md", "effects/CONTEXT.md", "Do not load"]:
         if marker not in entries[0]:
             fail(f"entry catalog missing routing marker: {marker}")
@@ -95,7 +105,7 @@ def validate_cards() -> list[Path]:
     cards = sorted((MAP / "objects").glob("*/*.md"))
     if len(cards) != 8:
         fail(f"expected eight object cards, found {len(cards)}")
-    required_meta = {"type", "cluster", "universe", "status", "verified_on", "revision", "entity"}
+    required_meta = {"type", "cluster", "universe", "status", "verified_on", "revision", "source_revision", "entity"}
     required_sections = ["## Why this shape", "## Shape", "## Connected to", "## If you change this", "## Surfaces", "## See"]
     allowed_universes = {"live", "leftover", "ghost"}
     allowed_statuses = {"stub", "verified", "stale"}
@@ -112,6 +122,13 @@ def validate_cards() -> list[Path]:
                 fail(f"{card.name} verified without valid date")
             if meta["revision"] != REVISION:
                 fail(f"{card.name} verified against wrong revision")
+            if meta["source_revision"] != SOURCE_REVISION or not re.fullmatch(r"[0-9a-f]{40}", meta["source_revision"]):
+                fail(f"{card.name} lacks the immutable source snapshot")
+            entity = ROOT / meta["entity"]
+            if not entity.is_file():
+                fail(f"{card.name} entity does not exist: {meta['entity']}")
+            if git("diff", "--quiet", SOURCE_REVISION, "--", meta["entity"]).returncode:
+                fail(f"{card.name} source changed since verification: {meta['entity']}")
         for section in required_sections:
             if section not in text:
                 fail(f"{card.name} missing {section}")
@@ -136,14 +153,23 @@ def validate_process_and_effects(cards: list[Path]) -> None:
     process = processes[0]
     text = require(process)
     meta = frontmatter(text, process)
-    for key in ["type", "universe", "status", "verified_on", "revision", "consumes", "produces"]:
+    for key in ["type", "universe", "status", "verified_on", "revision", "source_revision", "consumes", "produces"]:
         if key not in meta:
             fail(f"process missing frontmatter key: {key}")
-    if meta["type"] != "process" or meta["status"] != "verified" or meta["revision"] != REVISION:
+    if meta["type"] != "process" or meta["status"] != "verified" or meta["revision"] != REVISION or meta["source_revision"] != SOURCE_REVISION:
         fail(f"process is not verified against {REVISION}")
-    for section in ["## Input", "## Movement", "## Output", "## If you change this", "## Surfaces", "## See"]:
+    for section in ["## Input → Movement → Output", "## Why this shape", "## Steps", "## If you change this", "## Surfaces", "## See"]:
         if section not in text:
             fail(f"process missing {section}")
+    for card in cards:
+        if card.name == "old-close-checklist.md":
+            continue
+        if card.name not in text:
+            fail(f"process does not link the live control: {card.name}")
+    for citation in re.findall(r"(?:Source|Sources): `([^`]+)`", text):
+        target = (process.parent / citation).resolve()
+        if not target.is_file() or ROOT not in target.parents:
+            fail(f"broken or escaping process citation: {citation}")
     effects = require(MAP / "effects/CONTEXT.md")
     for card in cards:
         if card.name not in effects:
@@ -161,6 +187,7 @@ def validate_subject_and_privacy() -> None:
     ]:
         require(SUBJECT / relative)
     require(ROOT / "audit/00-inventory.md")
+    require(ROOT / "audit/02-migration-map.md")
     require(ROOT / "ARCHITECTURE-VERIFICATION.md")
     manifest = require(SUBJECT / "client-workspace/close-checklist-2026-07.md")
     for marker in ["CRHS-042", "2026-07", "business day 10", "QuickBooks Online", "sanitized composite"]:
@@ -170,6 +197,10 @@ def validate_subject_and_privacy() -> None:
     for marker in ["Balance sheet", "profit and loss", "gross-margin", "outside this bookkeeping workflow"]:
         if marker not in review:
             fail(f"close-review operating detail missing: {marker}")
+    prior_manifest = require(SUBJECT / "client-workspace/workspace-manifest.md")
+    for marker in ["Superseded", "not the current close route", "close-checklist-2026-07.md"]:
+        if marker not in prior_manifest:
+            fail(f"prior-state manifest lacks safe status marker: {marker}")
     text = "\n".join(path.read_text(encoding="utf-8") for path in ROOT.rglob("*") if path.is_file() and path.suffix.lower() in {".md", ".csv"})
     for marker in ["social security number", "routing number", "real client name"]:
         if marker in text.lower():
@@ -201,6 +232,17 @@ def validate_public_language() -> None:
                 fail(f"prohibited public reference in {path.relative_to(ROOT)}")
 
 
+def validate_bounded_walk(cards: list[Path]) -> None:
+    entry = require(ROOT / "README.md") + require(MAP / "CLAUDE.md")
+    estimates = []
+    for card in cards:
+        estimated_tokens = (len(entry) + len(require(card))) // 4
+        estimates.append(estimated_tokens)
+        if not 2000 <= estimated_tokens <= 8000:
+            fail(f"bounded walk for {card.name} estimates {estimated_tokens} tokens; expected 2000-8000")
+    print(f"Bounded-walk estimate: {min(estimates)}-{max(estimates)} tokens for subject entry + map entry + one card.")
+
+
 def main() -> None:
     validate_factory()
     validate_entry_and_contracts()
@@ -208,7 +250,8 @@ def main() -> None:
     validate_process_and_effects(cards)
     validate_subject_and_privacy()
     validate_public_language()
-    print("The Close Map validation passed: factory, gated inventory, entry twins, closed schema, 8 objects, 1 process, effects catalog, citations, privacy boundary, and public-language guard.")
+    validate_bounded_walk(cards)
+    print("The Close Map validation passed: complete inventory, generated catalogs, immutable provenance, closed schema, 8 objects, 1 process, effects routing, bounded walk, privacy boundary, and public-language guard.")
 
 
 if __name__ == "__main__":
