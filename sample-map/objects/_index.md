@@ -11,4 +11,4 @@
 | Report Delivery | live | verified | `bookkeeping/report-delivery.md` |
 | Transaction Completion | live | verified | `bookkeeping/transaction-completion.md` |
 
-This index is generated from card frontmatter by `validate_close_map.py`; do not add payload here.
+Generated from object frontmatter by `generate_close_map.py`; do not edit by hand.
