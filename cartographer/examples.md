@@ -1,6 +1,6 @@
 # Worked Map: Demo Bookkeeping Close
 
-This is one worked map of the supplied synthetic territory. The subject source remains authoritative.
+This is one worked map of a privacy-safe July monthly-close territory for a fictional home-services client. Its identities and values are synthetic; its operating handoffs reflect recurring bookkeeping work. The subject source remains authoritative.
 
 ## Catalog
 
@@ -22,7 +22,7 @@ This is one worked map of the supplied synthetic territory. The subject source r
 ## Card excerpt: Review Packet
 
 - **Universe:** live
-- **Source:** `demo-territory/client-workspace/review-packet-schema.md`
+- **Source:** `demo-territory/client-workspace/review-packet-2026-07.md`
 - **Hits:** packet schema, preparer handoff, reviewer view, approval target.
 - **Does not hit:** raw intake backlog, unrelated periods, source-document contents.
 
@@ -60,4 +60,3 @@ OPEN NEXT ONLY IF
 STOP
 - stop when intake, identity, duplicate, exception, and review-link consequences are known
 ```
-

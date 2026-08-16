@@ -2,7 +2,7 @@
 
 **Change one thing. Know what else moves. Load nothing you do not need.**
 
-The Close Map is a folder-based cartographer for a bookkeeping document-to-review system. It gives a newly hired bookkeeper and a cold AI model the same small set of doors into a real body of work—without copying client data or loading the entire operation.
+The Close Map is a folder-based cartographer for a bookkeeping firm's monthly-close handoff. It gives a newly hired bookkeeper and a cold AI model the same small set of doors into a realistic body of work—from statement intake and client follow-up through reviewer return and explicit approval—without copying client data or loading the entire operation.
 
 ## Run the live demonstration
 
@@ -10,16 +10,18 @@ The Close Map is a folder-based cartographer for a bookkeeping document-to-revie
 
 Try these two questions first:
 
-1. `Statements move from email to the portal.`
+1. `The client stops emailing vendor support and uses the portal only.`
 2. `Is Missing Documents.xlsx the live tracker?`
 
 The first produces a bounded change radius. The second springs the ghost trap: a plausibly named workbook still exists, but no live control writes to or reads from it.
+
+The supplied close is concrete enough to recognize: operating-bank and card statements arrive on business day 3, payroll and merchant reports on day 4, and the loan statement on day 5. One missing statement is resolved; one owner-paid charge still needs clarification. Revision 1 of the review packet is returned because that exception was not disclosed. Revision 2 discloses it and receives explicit approval without reopening unrelated reconciliations.
 
 ## What is here
 
 ```text
 cartographer/       The drop-in cartographer folder
-demo-territory/     A synthetic, privacy-safe bookkeeping workspace
+demo-territory/     A privacy-safe composite of a July monthly close
 sample-map/         The source-cited map left by the cartographer
 audit/              The inventory-before-cards artifact
 validate_close_map.py
@@ -59,7 +61,7 @@ A file is not live because its name sounds official. `LIVE` requires evidence th
 
 ## Privacy boundary
 
-The demonstration is synthetic. The cartographer cites paths, schemas, headings, and controls; it does not copy credentials, tax IDs, account numbers, balances, transaction contents, or client-identifying values.
+The demonstration is a sanitized composite of recurring monthly-close work. The client alias, identifiers, dates, and record contents are synthetic; the operating boundaries and handoffs reflect real bookkeeping patterns. The cartographer cites paths, schemas, headings, and controls; it does not copy credentials, tax IDs, account numbers, balances, transaction contents, or client-identifying values.
 
 ## Validate
 

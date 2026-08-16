@@ -1,3 +1,3 @@
-exception_id,workspace_id,period,affected_item,type,owner,status
-EX-DEMO-01,DEMO-001,2026-07,DOC-DEMO-02,missing_evidence,Bookkeeper,open
-
+exception_id,workspace_id,period,affected_item,type,owner,next_action,due_date,status,packet_disclosure
+EX-2026-07-014,CRHS-042,2026-07,DOC-2026-07-005,missing_evidence,Client Operations Manager,Upload July loan statement,2026-08-06,resolved,no
+EX-2026-07-019,CRHS-042,2026-07,DOC-2026-07-008,client_clarification,Senior Bookkeeper,Confirm business purpose for owner-paid vendor charge,2026-08-08,open,yes

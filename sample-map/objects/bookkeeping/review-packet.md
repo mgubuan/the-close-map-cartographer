@@ -4,13 +4,13 @@ cluster: bookkeeping
 universe: live
 status: verified
 verified_on: 2026-08-15
-revision: demo-v1
-entity: demo-territory/client-workspace/review-packet-schema.md
+revision: monthly-close-v1
+entity: demo-territory/client-workspace/review-packet-2026-07.md
 ---
 
 # Review Packet
 
-The bounded work records, evidence links, reconciliations, and disclosed exceptions handed to one reviewer for one workspace and period.
+Revision 2 of `PK-CRHS-2026-07`: the bounded reconciliation work, evidence links, review history, exclusions, and disclosed open exception handed to the CAS Manager.
 
 ## Why this shape
 
@@ -18,7 +18,7 @@ A bounded packet makes the review target explicit; it prevents a folder or an en
 
 ## Shape
 
-- Packet ID, workspace, period, preparer, reviewer.
+- Packet ID, revision, state, workspace, period, preparer, reviewer.
 - Work-record IDs, source references, reconciliation evidence.
 - Disclosed open exceptions and submitted timestamp.
 
@@ -38,11 +38,11 @@ A bounded packet makes the review target explicit; it prevents a folder or an en
 
 | Surface | Role |
 |---|---|
-| Bookkeeper | writes packet |
-| Reviewer | reads packet |
+| Senior Bookkeeper | writes packet and responds to return |
+| CAS Manager | reads, returns, and approves packet |
 | Approval register | names packet target |
 
 ## See
 
 - Source: `../../../demo-territory/client-workspace/review-packet-schema.md`
-
+- Source: `../../../demo-territory/client-workspace/review-packet-2026-07.md`

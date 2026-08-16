@@ -1,6 +1,7 @@
-# Retained Artifact Note
+# Retained Artifact Note — Missing Documents.xlsx
 
-`Missing Documents.xlsx` is represented here by name only; no real workbook or client information is included.
+This filename is represented without the workbook or any client data.
 
-The workbook was retained for historical reference. The current intake rules write missing-information conditions to `exception-register.csv`. No live control reads this workbook.
+The bookkeeping team used the workbook before missing-item follow-up moved into `exception-register.csv`. It remains in the archive because prior close notes link to it, but no current intake rule writes it, no team role updates it, no reviewer reads it, and no close decision depends on it.
 
+Its familiar name makes it dangerous: a new bookkeeper could update it and believe the live queue changed. It did not.

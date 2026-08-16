@@ -2,7 +2,7 @@
 
 ## Territory
 
-This map describes the synthetic bookkeeping document-to-review workspace in `../demo-territory/client-workspace/`. It maps the durable nouns, the one proven movement connecting them, and the first-order effect of changing each noun.
+This map describes the privacy-safe `CRHS-042 / 2026-07` monthly-close workspace in `../demo-territory/client-workspace/`. It maps the durable nouns, the one proven movement connecting them, and the first-order effect of changing each noun. Client identity and values are synthetic; the handoffs model recurring bookkeeping operations.
 
 It excludes accounting advice, transaction values, credentials, tax information, payroll data, diagnosis, and implementation recommendations.
 
@@ -35,4 +35,3 @@ It excludes accounting advice, transaction values, credentials, tax information,
 ## Authority
 
 Subject source wins over map. Within source, explicit registers and current rules win over filenames, folder names, and retained notes.
-

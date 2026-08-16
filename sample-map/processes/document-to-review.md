@@ -3,7 +3,7 @@ type: process
 universe: live
 status: verified
 verified_on: 2026-08-15
-revision: demo-v1
+revision: monthly-close-v1
 consumes:
   - ../objects/bookkeeping/client-workspace.md
   - ../objects/bookkeeping/source-document.md
@@ -25,7 +25,7 @@ The live movement that identifies received evidence, represents blocking conditi
 
 1. Accept evidence through an allowed channel and assign workspace, period, type, and source identity. Source: `../../demo-territory/client-workspace/intake-rules.md`.
 2. Create or update an exception when evidence is missing, unreadable, duplicated, or unmatched. Source: `../../demo-territory/client-workspace/intake-rules.md`.
-3. Assemble the defined work and evidence references into one review packet. Source: `../../demo-territory/client-workspace/review-packet-schema.md`.
+3. Assemble the defined work and evidence references into one review packet. Preserve reviewer return and resubmission as packet revisions. Source: `../../demo-territory/client-workspace/review-packet-2026-07.md`.
 
 ## Output
 
@@ -42,11 +42,12 @@ The live movement that identifies received evidence, represents blocking conditi
 | Surface | Role |
 |---|---|
 | Intake channel | writes source evidence |
-| Bookkeeper | identifies evidence, writes exceptions, assembles packet |
-| Reviewer | reads packet |
+| Senior Bookkeeper | identifies evidence, writes exceptions, assembles and resubmits packet |
+| CAS Manager | reads, returns, and approves packet |
 
 ## See
 
 - Source: `../../demo-territory/client-workspace/intake-rules.md`
 - Source: `../../demo-territory/client-workspace/review-packet-schema.md`
-
+- Source: `../../demo-territory/client-workspace/source-document-index.csv`
+- Source: `../../demo-territory/client-workspace/review-packet-2026-07.md`

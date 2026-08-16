@@ -7,7 +7,7 @@ Audited on 2026-08-15 against The Close Map's published operating contract.
 | Requirement | Evidence |
 |---|---|
 | Folder-based cartographer | `cartographer/` is the reusable factory |
-| Real, specific body of work | `demo-territory/client-workspace/` is one sanitized document-to-review workspace |
+| Realistic, specific body of work | `demo-territory/client-workspace/` is a privacy-safe composite of a July monthly close with expected evidence, receipt records, exception ownership, packet return, resubmission, and approval |
 | In-force territory | Source describes a current operating system, not a postmortem |
 | Territory is not the mapping method | The subject is bookkeeping work; the method remains in the factory |
 | Explicit identity | `identity.md` names cartographer, territory, human reader, and model reader |
@@ -51,4 +51,3 @@ Audited on 2026-08-15 against The Close Map's published operating contract.
 ## Honest boundary
 
 Structural validation and browser behavior are proven. An independent cold-reader transcript remains a separate semantic test and is not fabricated.
-
