@@ -31,6 +31,8 @@ Receipt alone is not readiness; each requirement needs a period, due date, owner
 
 - **Hits:** client request schedule; reminders; missing-record ownership; earliest reconciliation date; close target.
 - **Does not hit:** transaction category rules; review thresholds; delivered prior-period reports.
+- **Open next only if:** the definition of transaction-ready changes → `transaction-completion.md`.
+- **Stop:** when requirements, owners, due dates, reminders, exceptions, and close-timing consequences are explicit.
 
 ## Surfaces
 

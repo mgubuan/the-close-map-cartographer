@@ -31,6 +31,8 @@ It remains a card because plausible old names are tripwires for new bookkeepers 
 
 - **Hits:** nothing in the live monthly close.
 - **Does not hit:** current status; reconciliations; review readiness; report delivery.
+- **Open next only if:** current records-readiness status is needed → `client-records-ready.md`.
+- **Stop:** after confirming the file has no current writer, reader, or downstream decision.
 
 ## Surfaces
 

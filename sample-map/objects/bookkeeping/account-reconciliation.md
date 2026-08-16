@@ -31,6 +31,8 @@ Each account must move independently because a change can reopen one reconciliat
 
 - **Hits:** account frequency; evidence; risk classification; reviewer workload; downstream review status.
 - **Does not hit:** transaction category policy; client request deadlines; delivery contacts.
+- **Open next only if:** a supported AR, AP, payroll, tax, loan, or clearing balance changes → `key-balance-verification.md`.
+- **Stop:** when eligible accounts, risk criteria, reviewer approval, quarterly due dates, off-month evidence, and the return-to-monthly trigger are explicit.
 
 ## Surfaces
 
