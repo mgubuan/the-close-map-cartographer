@@ -115,7 +115,7 @@ def validate_cards() -> list[Path]:
         for section in required_sections:
             if section not in text:
                 fail(f"{card.name} missing {section}")
-        for marker in ["**Hits:**", "**Does not hit:**", "Source:"]:
+        for marker in ["**Hits:**", "**Does not hit:**", "**Open next only if:**", "**Stop:**", "Source:"]:
             if marker not in text:
                 fail(f"{card.name} missing {marker}")
         for citation in re.findall(r"Source: `([^`]+)`", text):

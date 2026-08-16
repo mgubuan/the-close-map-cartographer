@@ -31,6 +31,8 @@ Manual entries can change proven balances, so support, authority, and downstream
 
 - **Hits:** affected account balances; related reconciliations; tie-outs; review; delivered reports when already issued.
 - **Does not hit:** accounts outside the entry; unrelated client records; prior approved entries.
+- **Open next only if:** the entry changes a completed review → `bookkeeping-review.md`.
+- **Stop:** when support, date, accounts, amount, authority, posting status, and reopened controls are explicit.
 
 ## Surfaces
 

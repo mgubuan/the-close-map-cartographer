@@ -31,6 +31,8 @@ Not every important balance is proven by a bank reconciliation; each needs its o
 
 - **Hits:** required reports; tolerance; difference ownership; balance-sheet review checklist.
 - **Does not hit:** unrelated reconciliations; report delivery channel; client intake method.
+- **Open next only if:** resolving a difference requires a supported entry → `month-end-entry.md`.
+- **Stop:** when source report, ledger accounts, tolerance, owner, reviewer, and difference treatment are explicit.
 
 ## Surfaces
 

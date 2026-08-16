@@ -31,6 +31,8 @@ Downloaded is not complete; completion requires explicit controls whose status c
 
 - **Hits:** posting settings; preparer workload; support rules; transaction-complete sign-off; affected reconciliations.
 - **Does not hit:** statement deadlines; report recipients; unrelated account controls.
+- **Open next only if:** a changed transaction alters an account balance → `account-reconciliation.md`.
+- **Stop:** when applicable clients, transactions, evidence, reviewer, exceptions, and completion status are explicit.
 
 ## Surfaces
 

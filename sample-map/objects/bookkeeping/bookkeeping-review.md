@@ -31,6 +31,8 @@ A review must name its tests and thresholds; opening a report is not evidence th
 
 - **Hits:** comparison rules; explanation requirements; reviewer workload; sign-off criteria; delivery readiness.
 - **Does not hit:** transaction posting rules; statement deadlines; delivery channel.
+- **Open next only if:** sign-off or report readiness changes → `report-delivery.md`.
+- **Stop:** when tests, thresholds, explanations, exceptions, reviewer, and sign-off status are explicit.
 
 ## Surfaces
 

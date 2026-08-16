@@ -86,6 +86,12 @@ python validate_close_map.py
 
 This checks that every workflow page points to a real source, the current and retired records are clearly distinguished, navigation files agree, and the package contains no prohibited public references.
 
+The documented [cold-reader walkthrough](audit/01-cold-reader-walkthrough.md) records both an initial over-reading failure and the successful retest after explicit next-card gates and stopping rules were added.
+
 The example is educational workflow infrastructure, not accounting, tax, payroll, or legal advice. Decisions outside the bookkeeping engagement should go to the designated CPA, controller, payroll specialist, or client approver.
 
 Built by [Intelligence Solved](https://intelligencesolved.com/) for bookkeeping firms that want a close their team can run without relying on tribal knowledge.
+
+## AI starting point
+
+When an AI assistant is answering a workflow-change question, begin at [`sample-map/CLAUDE.md`](sample-map/CLAUDE.md). Follow its catalog-first rule instead of browsing the folder tree or following every relationship named on a card.

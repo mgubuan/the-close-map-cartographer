@@ -9,4 +9,4 @@
 - The retired checklist is marked as a ghost with no current writer, reader, or decision.
 - Public-language and privacy-boundary checks pass.
 
-A fresh-session human or model walk remains the semantic test; structural validation alone cannot prove that a reader chooses the right door.
+A documented fresh-session walk is recorded in `audit/01-cold-reader-walkthrough.md`. The first run exposed an over-reading failure; after explicit next-card gates and stop conditions were added, the second isolated reader opened one object card, one cited source, answered correctly, reported unknown firm policy, and stopped at first-order impact.

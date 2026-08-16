@@ -31,6 +31,8 @@ Delivery is an event, not a folder name; preserving version, recipient, time, an
 
 - **Hits:** approval; recipients; report versioning; reopen log; client notification.
 - **Does not hit:** current work for other clients; unchanged reports; future periods without carryforward impact.
+- **Open next only if:** a delivered number changes → reopen only the upstream card controlling that number.
+- **Stop:** when version, reviewer, recipient, timestamp, reopen authority, and replacement-notification rule are explicit.
 
 ## Surfaces
 
