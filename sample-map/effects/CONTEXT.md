@@ -1,15 +1,16 @@
 # Change-Impact Catalog
 
-Open one primary card. Open a second only when the primary card's connection requires it.
+Open one primary card. Open a second only when the primary card requires it.
 
 | If you are changing… | Open first | Open next only if… |
 |---|---|---|
-| where client evidence arrives or how it is identified | `../objects/bookkeeping/source-document.md` | ownership changes → `exception.md`; reviewer evidence changes → `review-packet.md` |
-| how unresolved information is represented or owned | `../objects/bookkeeping/exception.md` | the handoff disclosure changes → `review-packet.md` |
-| what the reviewer receives | `../objects/bookkeeping/review-packet.md` | approval evidence changes → `approval.md` |
-| what makes work explicitly approved | `../objects/bookkeeping/approval.md` | the target packet is unclear → `review-packet.md` |
-| the boundary or roles for one engagement | `../objects/bookkeeping/client-workspace.md` | the change concerns received evidence → `source-document.md` |
-| whether `Missing Documents.xlsx` controls live work | `../objects/bookkeeping/missing-documents-tracker.md` | the live missing-information object is needed → `exception.md` |
+| required records, deadlines, or reminders | `../objects/bookkeeping/client-records-ready.md` | transaction readiness changes → `transaction-completion.md` |
+| posting, matching, categorization, or transaction review | `../objects/bookkeeping/transaction-completion.md` | an account balance changes → `account-reconciliation.md` |
+| reconciliation frequency, evidence, or review | `../objects/bookkeeping/account-reconciliation.md` | a supported balance changes → `key-balance-verification.md` |
+| AR, AP, payroll, tax, loan, or clearing tie-outs | `../objects/bookkeeping/key-balance-verification.md` | an entry is required → `month-end-entry.md` |
+| recurring, correcting, or externally approved entries | `../objects/bookkeeping/month-end-entry.md` | statements change → `bookkeeping-review.md` |
+| variance thresholds, reasonableness, or reviewer rules | `../objects/bookkeeping/bookkeeping-review.md` | delivery readiness changes → `report-delivery.md` |
+| recipients, versions, delivery, or reopening | `../objects/bookkeeping/report-delivery.md` | an upstream control is invalidated → open only that card |
+| whether the old checklist controls live work | `../objects/bookkeeping/old-close-checklist.md` | current status is needed → `client-records-ready.md` |
 
 If no row matches, stop with `UNKNOWN / Catalog Gap`. Do not infer a waterfall.
-

@@ -1,0 +1,5 @@
+workspace_id,period,balance,status,source,reviewer
+CRHS-042,2026-07,accounts receivable,verified,AR aging,CAS Manager
+CRHS-042,2026-07,accounts payable,verified,AP aging,CAS Manager
+CRHS-042,2026-07,payroll liabilities,verified,payroll report,CAS Manager
+CRHS-042,2026-07,sales tax payable,verified,sales tax report,CAS Manager

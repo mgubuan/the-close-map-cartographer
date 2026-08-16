@@ -4,7 +4,7 @@ The Close Map emits exactly two card types.
 
 ## Object
 
-A durable noun someone can identify, cite, and change: `client-workspace`, `source-document`, `exception`, `review-packet`, `approval`, or a ghost/leftover object that might be mistaken for one of those.
+A durable noun someone can identify, cite, and change: `client-records-ready`, `transaction-completion`, `account-reconciliation`, `key-balance-verification`, `month-end-entry`, `bookkeeping-review`, `report-delivery`, or a ghost/leftover object mistaken for one of those.
 
 Required fields:
 
@@ -35,4 +35,3 @@ Required fields:
 Required sections: Input, Movement, Output, If you change this, Surfaces, and See.
 
 No third card type may be introduced without first changing the schema and the catalog.
-

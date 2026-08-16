@@ -6,7 +6,7 @@ List folders, records, trackers, SOPs, queues, and integrations before naming ma
 
 ## 2. Map nouns, not the weekly story
 
-Good nouns include `Source Document`, `Exception`, `Review Packet`, and `Approval`. Do not write a top-to-bottom month-end tour.
+Good nouns include `Account Reconciliation`, `Month-end Entry`, `Bookkeeping Review`, and `Report Delivery`. Do not write a top-to-bottom month-end tour.
 
 ## 3. Prove liveness
 

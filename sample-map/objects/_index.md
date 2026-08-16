@@ -2,11 +2,13 @@
 
 | Noun | Universe | Status | Card |
 |---|---|---|---|
-| Approval | live | verified | `bookkeeping/approval.md` |
-| Client Workspace | live | verified | `bookkeeping/client-workspace.md` |
-| Exception | live | verified | `bookkeeping/exception.md` |
-| Missing Documents Tracker | ghost | verified | `bookkeeping/missing-documents-tracker.md` |
-| Review Packet | live | verified | `bookkeeping/review-packet.md` |
-| Source Document | live | verified | `bookkeeping/source-document.md` |
+| Account Reconciliation | live | verified | `bookkeeping/account-reconciliation.md` |
+| Bookkeeping Review | live | verified | `bookkeeping/bookkeeping-review.md` |
+| Client Records Ready | live | verified | `bookkeeping/client-records-ready.md` |
+| Key Balance Verification | live | verified | `bookkeeping/key-balance-verification.md` |
+| Month-end Entry | live | verified | `bookkeeping/month-end-entry.md` |
+| Old Close Checklist | ghost | verified | `bookkeeping/old-close-checklist.md` |
+| Report Delivery | live | verified | `bookkeeping/report-delivery.md` |
+| Transaction Completion | live | verified | `bookkeeping/transaction-completion.md` |
 
 This index is generated from card frontmatter by `validate_close_map.py`; do not add payload here.

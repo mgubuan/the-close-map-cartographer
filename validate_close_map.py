@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parent
 FACTORY = ROOT / "cartographer"
 MAP = ROOT / "sample-map"
 SUBJECT = ROOT / "demo-territory"
-REVISION = "monthly-close-v1"
+REVISION = "monthly-close-v2"
 
 
 def fail(message: str) -> None:
@@ -62,7 +62,7 @@ def validate_factory() -> None:
     ]:
         require(FACTORY / relative)
     example = require(FACTORY / "examples.md")
-    for marker in ["## Catalog", "Source Document", "Review Packet", "## Ghost card", "## One change", "DOES NOT HIT"]:
+    for marker in ["## Catalog", "Client Records Ready", "Report Delivery", "## Ghost card", "## One change", "DOES NOT HIT"]:
         if marker not in example:
             fail(f"worked example missing: {marker}")
 
@@ -93,8 +93,8 @@ def validate_entry_and_contracts() -> None:
 
 def validate_cards() -> list[Path]:
     cards = sorted((MAP / "objects").glob("*/*.md"))
-    if len(cards) != 6:
-        fail(f"expected six object cards, found {len(cards)}")
+    if len(cards) != 8:
+        fail(f"expected eight object cards, found {len(cards)}")
     required_meta = {"type", "cluster", "universe", "status", "verified_on", "revision", "entity"}
     required_sections = ["## Why this shape", "## Shape", "## Connected to", "## If you change this", "## Surfaces", "## See"]
     allowed_universes = {"live", "leftover", "ghost"}
@@ -140,7 +140,7 @@ def validate_process_and_effects(cards: list[Path]) -> None:
         if key not in meta:
             fail(f"process missing frontmatter key: {key}")
     if meta["type"] != "process" or meta["status"] != "verified" or meta["revision"] != REVISION:
-        fail("process is not verified against monthly-close-v1")
+        fail(f"process is not verified against {REVISION}")
     for section in ["## Input", "## Movement", "## Output", "## If you change this", "## Surfaces", "## See"]:
         if section not in text:
             fail(f"process missing {section}")
@@ -154,22 +154,22 @@ def validate_process_and_effects(cards: list[Path]) -> None:
 
 def validate_subject_and_privacy() -> None:
     for relative in [
-        "client-workspace/workspace-manifest.md", "client-workspace/intake-rules.md",
-        "client-workspace/source-document-index.csv", "client-workspace/review-packet-schema.md",
-        "client-workspace/review-packet-2026-07.md", "client-workspace/exception-register.csv",
-        "client-workspace/approval-register.csv", "client-workspace/archive/Missing Documents.xlsx.note.md",
+        "client-workspace/close-checklist-2026-07.md", "client-workspace/transaction-review-2026-07.csv",
+        "client-workspace/reconciliation-register-2026-07.csv", "client-workspace/balance-verification-2026-07.csv",
+        "client-workspace/month-end-entry-log-2026-07.csv", "client-workspace/close-review-2026-07.md",
+        "client-workspace/close-delivery-register.csv", "client-workspace/archive/Old Close Checklist.xlsx.note.md",
     ]:
         require(SUBJECT / relative)
     require(ROOT / "audit/00-inventory.md")
     require(ROOT / "ARCHITECTURE-VERIFICATION.md")
-    manifest = require(SUBJECT / "client-workspace/workspace-manifest.md")
+    manifest = require(SUBJECT / "client-workspace/close-checklist-2026-07.md")
     for marker in ["CRHS-042", "2026-07", "business day 10", "QuickBooks Online", "sanitized composite"]:
         if marker not in manifest:
             fail(f"realistic territory marker missing: {marker}")
-    packet = require(SUBJECT / "client-workspace/review-packet-2026-07.md")
-    for marker in ["Revision: `2`", "EX-2026-07-019", "RN-017", "## Excluded"]:
-        if marker not in packet:
-            fail(f"review-packet operating detail missing: {marker}")
+    review = require(SUBJECT / "client-workspace/close-review-2026-07.md")
+    for marker in ["Balance sheet", "profit and loss", "gross-margin", "outside this bookkeeping workflow"]:
+        if marker not in review:
+            fail(f"close-review operating detail missing: {marker}")
     text = "\n".join(path.read_text(encoding="utf-8") for path in ROOT.rglob("*") if path.is_file() and path.suffix.lower() in {".md", ".csv"})
     for marker in ["social security number", "routing number", "real client name"]:
         if marker in text.lower():
@@ -208,7 +208,7 @@ def main() -> None:
     validate_process_and_effects(cards)
     validate_subject_and_privacy()
     validate_public_language()
-    print("The Close Map validation passed: factory, gated inventory, entry twins, closed schema, 6 objects, 1 process, effects catalog, citations, privacy boundary, and public-language guard.")
+    print("The Close Map validation passed: factory, gated inventory, entry twins, closed schema, 8 objects, 1 process, effects catalog, citations, privacy boundary, and public-language guard.")
 
 
 if __name__ == "__main__":

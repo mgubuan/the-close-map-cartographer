@@ -1,67 +1,65 @@
 # The Close Map
 
-**Change one thing. Know what else moves. Load nothing you do not need.**
+**Change one part of the close. Know what else must change. Load nothing you do not need.**
 
-The Close Map is a folder-based cartographer for a bookkeeping firm's monthly-close handoff. It gives a newly hired bookkeeper and a cold AI model the same small set of doors into a realistic body of work—from statement intake and client follow-up through reviewer return and explicit approval—without copying client data or loading the entire operation.
+The Close Map is a folder-based cartographer for a bookkeeping firm’s monthly close. It gives a newly hired bookkeeper or cold AI model a small set of doors into one realistic July close without copying client data or loading the entire operation.
 
-## Run the live demonstration
+## Live demonstration
 
-**[Open the client-facing Change Radius demo →](https://intelligencesolved.com/close-map)**
+[Open the bookkeeping Close Map →](https://intelligencesolved.com/close-map)
 
-Try these two questions first:
+The demo and this repository share the same territory:
 
-1. `The client stops emailing vendor support and uses the portal only.`
-2. `Is Missing Documents.xlsx the live tracker?`
-
-The first produces a bounded change radius. The second springs the ghost trap: a plausibly named workbook still exists, but no live control writes to or reads from it.
-
-The supplied close is concrete enough to recognize: operating-bank and card statements arrive on business day 3, payroll and merchant reports on day 4, and the loan statement on day 5. One missing statement is resolved; one owner-paid charge still needs clarification. Revision 1 of the review packet is returned because that exception was not disclosed. Revision 2 discloses it and receives explicit approval without reopening unrelated reconciliations.
+1. Client Records Ready
+2. Transaction Completion
+3. Account Reconciliation
+4. Key Balance Verification
+5. Month-end Entry
+6. Bookkeeping Review
+7. Report Delivery
+8. Old Close Checklist — a named file with no live wiring
 
 ## What is here
 
 ```text
-cartographer/       The drop-in cartographer folder
-demo-territory/     A privacy-safe composite of a July monthly close
+cartographer/       Drop-in instructions that create a map
+demo-territory/     Privacy-safe source records for one July close
 sample-map/         The source-cited map left by the cartographer
-audit/              The inventory-before-cards artifact
+audit/              Inventory completed before cards were written
 validate_close_map.py
 test-results.md
 ```
 
-The deliverable is `cartographer/`. Point it at a real, sanitized body of work and it leaves a small routing catalog, a map contract, a closed schema, a verified noun shelf, real movement cards, and a change-impact catalog.
+The deliverable is `cartographer/`. Point it at a real, sanitized body of work. It inventories the territory, creates a small catalog, writes source-cited noun cards, proves one movement, records change impact, and gives a later reader a stopping rule.
 
-## The front door
-
-The sample catalog routes change intent to one card:
+## Front door
 
 | If you need to change… | Open |
 |---|---|
-| Where client evidence arrives | `sample-map/objects/bookkeeping/source-document.md` |
-| How missing information is represented | `sample-map/objects/bookkeeping/exception.md` |
-| What a reviewer receives | `sample-map/objects/bookkeeping/review-packet.md` |
-| What makes work officially approved | `sample-map/objects/bookkeeping/approval.md` |
-| A tracker that may no longer be wired | `sample-map/objects/bookkeeping/missing-documents-tracker.md` |
+| Required records, deadlines, or reminders | `sample-map/objects/bookkeeping/client-records-ready.md` |
+| Posting, matching, or transaction review | `sample-map/objects/bookkeeping/transaction-completion.md` |
+| Reconciliation frequency or evidence | `sample-map/objects/bookkeeping/account-reconciliation.md` |
+| AR, AP, payroll, tax, loan, or clearing checks | `sample-map/objects/bookkeeping/key-balance-verification.md` |
+| Supported month-end entries | `sample-map/objects/bookkeeping/month-end-entry.md` |
+| Review thresholds or sign-off | `sample-map/objects/bookkeeping/bookkeeping-review.md` |
+| Delivery, versioning, or reopening | `sample-map/objects/bookkeeping/report-delivery.md` |
+| Whether the old checklist is current | `sample-map/objects/bookkeeping/old-close-checklist.md` |
 
-The generated map uses a strict, inspectable system-map architecture: byte-identical entry twins, a map contract, a closed schema, copyable object/process templates, a generated noun index, verified noun cards, one proven movement, and a change-impact catalog. Every card names:
+Every card explains what the noun is, why it has that shape, what a change affects, what it does not affect, who reads or writes it, and which source wins when the map disagrees.
 
-- what the noun is;
-- why it has its current shape;
-- whether it is `LIVE`, `LEFTOVER`, `GHOST`, or `UNKNOWN`;
-- the source evidence establishing that status;
-- what a change `Hits`;
-- what it `Does not hit`;
-- when another card may be opened; and
-- when the reader must stop.
+## How a cold reader walks
 
-## The core rule
+1. Open `sample-map/CLAUDE.md`.
+2. Use `sample-map/effects/CONTEXT.md` to choose one card.
+3. Open that card and one cited source.
+4. Open another card only when the first card requires it.
+5. Stop at first-order impact.
 
-> Existence is not liveness. Movement is liveness.
-
-A file is not live because its name sounds official. `LIVE` requires evidence that something currently writes it, reads it, or makes an operational decision from it.
+Never load the entire objects folder.
 
 ## Privacy boundary
 
-The demonstration is a sanitized composite of recurring monthly-close work. The client alias, identifiers, dates, and record contents are synthetic; the operating boundaries and handoffs reflect real bookkeeping patterns. The cartographer cites paths, schemas, headings, and controls; it does not copy credentials, tax IDs, account numbers, balances, transaction contents, or client-identifying values.
+The demonstration is a sanitized composite. Identities, dates, and contents are synthetic. The map cites paths, schemas, headings, and controls; it does not copy credentials, tax identifiers, account numbers, balances, transaction contents, or client-identifying values.
 
 ## Validate
 
@@ -69,10 +67,6 @@ The demonstration is a sanitized composite of recurring monthly-close work. The 
 python validate_close_map.py
 ```
 
-The validator checks structural completeness, status vocabulary, catalog doors, source citations, and the sanitized demonstration boundary. It does not pretend structural checks prove semantic understanding; a fresh-session blind-reader test is still required and is marked honestly in `test-results.md`.
-
-## Later reader
-
-The later reader is a newly hired bookkeeper or cold AI assistant who must change an intake or review system without confusing `received` with `complete`, treating a ghost tracker as live, or ingesting the entire firm library.
+The validator checks structure, entry twins, the closed schema, eight cards, one movement, source citations, status vocabulary, privacy boundaries, and public-language constraints.
 
 Built and maintained by [Intelligence Solved](https://intelligencesolved.com/).
