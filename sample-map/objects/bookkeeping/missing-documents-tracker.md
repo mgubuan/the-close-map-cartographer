@@ -4,7 +4,7 @@ cluster: bookkeeping
 universe: ghost
 status: verified
 verified_on: 2026-08-15
-revision: demo-v1
+revision: monthly-close-v1
 entity: demo-territory/client-workspace/archive/Missing Documents.xlsx.note.md
 ---
 
@@ -46,4 +46,3 @@ The card exists as a tripwire: the filename implies current authority, while sou
 
 - Source: `../../../demo-territory/client-workspace/archive/Missing Documents.xlsx.note.md`
 - Source: `../../../demo-territory/client-workspace/intake-rules.md`
-

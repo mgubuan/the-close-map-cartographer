@@ -4,13 +4,13 @@ cluster: bookkeeping
 universe: live
 status: verified
 verified_on: 2026-08-15
-revision: demo-v1
+revision: monthly-close-v1
 entity: demo-territory/client-workspace/approval-register.csv
 ---
 
 # Approval
 
-Explicit evidence in `approval-register.csv` that a named reviewer accepted a defined review packet at a recorded time.
+The explicit `approved` event showing that the CAS Manager accepted revision 2 of `PK-CRHS-2026-07` at a recorded time after returning revision 1.
 
 ## Why this shape
 
@@ -18,8 +18,8 @@ Approval needs an explicit actor, target, status, and timestamp; folder placemen
 
 ## Shape
 
-- Approval ID, packet ID, reviewer, status, recorded timestamp.
-- Exactly one defined packet target.
+- Approval-event ID, packet ID, packet revision, reviewer role, status, timestamp, and note reference.
+- An event history that preserves both return and approval.
 
 ## Connected to
 
@@ -37,7 +37,7 @@ Approval needs an explicit actor, target, status, and timestamp; folder placemen
 
 | Surface | Role |
 |---|---|
-| Reviewer | writes approval |
+| CAS Manager | writes return or approval event |
 | Close readiness | reads approval |
 | Delivery control | reads approval |
 
@@ -45,4 +45,4 @@ Approval needs an explicit actor, target, status, and timestamp; folder placemen
 
 - Source: `../../../demo-territory/client-workspace/approval-register.csv`
 - Source: `../../../demo-territory/client-workspace/review-packet-schema.md`
-
+- Source: `../../../demo-territory/client-workspace/review-packet-2026-07.md`

@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parent
 FACTORY = ROOT / "cartographer"
 MAP = ROOT / "sample-map"
 SUBJECT = ROOT / "demo-territory"
-REVISION = "demo-v1"
+REVISION = "monthly-close-v1"
 
 
 def fail(message: str) -> None:
@@ -140,7 +140,7 @@ def validate_process_and_effects(cards: list[Path]) -> None:
         if key not in meta:
             fail(f"process missing frontmatter key: {key}")
     if meta["type"] != "process" or meta["status"] != "verified" or meta["revision"] != REVISION:
-        fail("process is not verified against demo-v1")
+        fail("process is not verified against monthly-close-v1")
     for section in ["## Input", "## Movement", "## Output", "## If you change this", "## Surfaces", "## See"]:
         if section not in text:
             fail(f"process missing {section}")
@@ -155,12 +155,21 @@ def validate_process_and_effects(cards: list[Path]) -> None:
 def validate_subject_and_privacy() -> None:
     for relative in [
         "client-workspace/workspace-manifest.md", "client-workspace/intake-rules.md",
-        "client-workspace/review-packet-schema.md", "client-workspace/exception-register.csv",
+        "client-workspace/source-document-index.csv", "client-workspace/review-packet-schema.md",
+        "client-workspace/review-packet-2026-07.md", "client-workspace/exception-register.csv",
         "client-workspace/approval-register.csv", "client-workspace/archive/Missing Documents.xlsx.note.md",
     ]:
         require(SUBJECT / relative)
     require(ROOT / "audit/00-inventory.md")
     require(ROOT / "ARCHITECTURE-VERIFICATION.md")
+    manifest = require(SUBJECT / "client-workspace/workspace-manifest.md")
+    for marker in ["CRHS-042", "2026-07", "business day 10", "QuickBooks Online", "sanitized composite"]:
+        if marker not in manifest:
+            fail(f"realistic territory marker missing: {marker}")
+    packet = require(SUBJECT / "client-workspace/review-packet-2026-07.md")
+    for marker in ["Revision: `2`", "EX-2026-07-019", "RN-017", "## Excluded"]:
+        if marker not in packet:
+            fail(f"review-packet operating detail missing: {marker}")
     text = "\n".join(path.read_text(encoding="utf-8") for path in ROOT.rglob("*") if path.is_file() and path.suffix.lower() in {".md", ".csv"})
     for marker in ["social security number", "routing number", "real client name"]:
         if marker in text.lower():

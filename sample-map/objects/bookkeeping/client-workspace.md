@@ -4,13 +4,13 @@ cluster: bookkeeping
 universe: live
 status: verified
 verified_on: 2026-08-15
-revision: demo-v1
+revision: monthly-close-v1
 entity: demo-territory/client-workspace/workspace-manifest.md
 ---
 
 # Client Workspace
 
-The access and record boundary for one sanitized bookkeeping engagement, named `DEMO-001` in the demonstration source.
+The access and record boundary for the fictional `CRHS-042` July close: one client alias, one period, assigned bookkeeping roles, named systems, and a business-day-10 approval target.
 
 ## Why this shape
 
@@ -18,9 +18,10 @@ Workspace and period identity prevent one engagement's evidence, roles, and cont
 
 ## Shape
 
-- Workspace ID and period convention.
-- Assigned preparer and reviewer roles.
-- Named live intake, exception, and approval systems.
+- Workspace ID `CRHS-042` and period `2026-07`.
+- Senior Bookkeeper, Client Accounting Services Manager, and client Operations Manager roles.
+- Client portal, controlled intake email, QuickBooks Online, payroll, and merchant surfaces.
+- Named source index, exception register, review packet, and approval register.
 
 ## Connected to
 
@@ -39,10 +40,9 @@ Workspace and period identity prevent one engagement's evidence, roles, and cont
 | Surface | Role |
 |---|---|
 | Intake | writes within boundary |
-| Bookkeeper | reads and writes |
-| Reviewer | reads assigned packet |
+| Senior Bookkeeper | reads and writes |
+| CAS Manager | reads assigned packet and approves |
 
 ## See
 
 - Source: `../../../demo-territory/client-workspace/workspace-manifest.md`
-

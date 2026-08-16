@@ -4,13 +4,13 @@ cluster: bookkeeping
 universe: live
 status: verified
 verified_on: 2026-08-15
-revision: demo-v1
+revision: monthly-close-v1
 entity: demo-territory/client-workspace/intake-rules.md
 ---
 
 # Source Document
 
-Evidence received through an allowed channel and assigned a stable workspace, period, type, and source identity.
+One bank, card, payroll, merchant, loan, or requested-support item recorded in `source-document-index.csv` with a stable workspace, period, evidence type, channel, timestamp, and storage reference.
 
 ## Why this shape
 
@@ -19,7 +19,7 @@ Identity must remain stable when the intake channel changes; arrival through ema
 ## Shape
 
 - Accepted channels: controlled intake email or client portal.
-- Required identity: workspace ID, period, document type, source reference.
+- Required identity: document ID, workspace ID, period, evidence type, channel, timestamp, and storage reference.
 - Blocking conditions become live exceptions.
 
 ## Connected to
@@ -39,11 +39,11 @@ Identity must remain stable when the intake channel changes; arrival through ema
 | Surface | Role |
 |---|---|
 | Intake channel | writes evidence |
-| Bookkeeper | reads, identifies, links |
+| Senior Bookkeeper | reads, identifies, links |
 | Review packet | reads source reference |
 
 ## See
 
 - Source: `../../../demo-territory/client-workspace/intake-rules.md`
-- Source: `../../../demo-territory/client-workspace/review-packet-schema.md`
-
+- Source: `../../../demo-territory/client-workspace/source-document-index.csv`
+- Source: `../../../demo-territory/client-workspace/review-packet-2026-07.md`

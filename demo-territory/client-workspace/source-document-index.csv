@@ -1,0 +1,7 @@
+document_id,workspace_id,period,evidence_type,source_channel,received_at,storage_reference,status
+DOC-2026-07-001,CRHS-042,2026-07,operating_bank_statement,client_portal,2026-08-03T14:12:00Z,portal://CRHS-042/2026-07/bank-001,accepted
+DOC-2026-07-002,CRHS-042,2026-07,business_card_statement,client_portal,2026-08-03T14:18:00Z,portal://CRHS-042/2026-07/card-001,accepted
+DOC-2026-07-003,CRHS-042,2026-07,payroll_register,client_portal,2026-08-04T16:02:00Z,portal://CRHS-042/2026-07/payroll-001,accepted
+DOC-2026-07-004,CRHS-042,2026-07,merchant_settlement_report,client_portal,2026-08-04T17:40:00Z,portal://CRHS-042/2026-07/merchant-001,accepted
+DOC-2026-07-005,CRHS-042,2026-07,loan_statement,client_portal,2026-08-06T19:11:00Z,portal://CRHS-042/2026-07/loan-001,accepted
+DOC-2026-07-008,CRHS-042,2026-07,vendor_support,intake_email,2026-08-07T21:08:00Z,email://CRHS-042/2026-07/vendor-008,needs_clarification
