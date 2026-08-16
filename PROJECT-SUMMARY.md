@@ -1,7 +1,7 @@
-# Project Summary
+# What This Gives a Bookkeeping Firm
 
-The Close Map describes one privacy-safe July bookkeeping close through seven live controls: client records, transaction completion, account reconciliations, key balance checks, month-end entries, bookkeeping review, and report delivery. One retired checklist is mapped as a ghost so a new bookkeeper or cold model does not mistake it for current status.
+The Close Map turns a monthly-close folder into a practical guide a new bookkeeper can follow without a long handoff call. It connects seven parts of the close: client records, transaction completion, reconciliations, key balance checks, month-end entries, bookkeeping review, and report delivery.
 
-The later reader starts in the catalog, opens one source-cited card, names what a proposed workflow change affects and does not affect, and stops without loading the full close.
+When the firm changes a deadline, review rule, reconciliation frequency, required tie-out, or delivery procedure, the guide shows which related work must also change and which work can remain untouched.
 
-Live demonstration: https://intelligencesolved.com/close-map
+The included July close is fictional and contains no client values. Try the live version at https://intelligencesolved.com/close-map.
