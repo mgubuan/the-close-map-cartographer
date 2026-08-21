@@ -2,7 +2,7 @@
 
 ## Territory
 
-This map describes the privacy-safe `CRHS-042 / 2026-07` bookkeeping close in `../demo-territory/client-workspace/`: required client records, transaction completion, reconciliations, key balance checks, supported month-end entries, bookkeeping review, and report delivery. It excludes tax advice, accounting-policy decisions, credentials, and client values.
+This map describes the privacy-safe `CRHS-042 / 2026-07` reconstruction in `../demo-territory/client-workspace/`, derived from recurring monthly-close work directly operated and supervised during more than twenty years of controllership. Its example identity and contents are synthetic; its operating controls and handoffs reflect real close work. It excludes tax advice, accounting-policy decisions, credentials, and client values.
 
 ## Universes
 

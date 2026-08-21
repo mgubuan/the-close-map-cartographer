@@ -1,6 +1,6 @@
 # Cedar Ridge Home Services — July Close Workspace
 
-This privacy-safe territory is a sanitized composite of recurring monthly-close work in bookkeeping firms. `Cedar Ridge Home Services` is fictional; identifiers, dates, and record contents are synthetic. The workflow boundaries, handoffs, and naming collisions reflect real operating patterns.
+This privacy-safe territory reconstructs recurring monthly-close work directly operated and supervised during more than twenty years of controllership. `Cedar Ridge Home Services` is fictional; identifiers, dates, and record contents are synthetic. The workflow boundaries, handoffs, controls, and naming collisions reflect real operating patterns.
 
 ## Engagement
 
