@@ -1,6 +1,6 @@
 # Worked Map: Demo Bookkeeping Close
 
-This worked map uses a privacy-safe July close for a fictional home-services client. Source records remain authoritative.
+This worked map uses a privacy-safe reconstruction of recurring monthly-close work directly operated and supervised during more than twenty years of controllership. The example client and record contents are synthetic; the operating controls and handoffs reflect real close work. Source records remain authoritative.
 
 ## Catalog
 

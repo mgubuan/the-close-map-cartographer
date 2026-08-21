@@ -1,10 +1,23 @@
 # The Close Map for Bookkeeping Firms
 
-**A monthly-close workflow your bookkeepers can follow, review, and safely adapt.**
+**A source-linked guide to what must change—and what can stay put—when a bookkeeping firm adapts a client's monthly close.**
 
 Most close checklists tell someone what to mark complete. They do not explain what “done” means, what proof belongs with the task, or which later work must be repeated when something changes.
 
-The Close Map fixes that. It gives a bookkeeping firm one connected view of the monthly close—from waiting on client records through delivering reviewed reports.
+The Close Map fixes that. Start with one practical change, open one relevant control, verify it against source, and stop after the affected work is clear.
+
+## Start with a change, not a folder tour
+
+| If you are asking… | Open first |
+|---|---|
+| What changes if this client needs statements by business day three? | [Client Records Ready](sample-map/objects/bookkeeping/client-records-ready.md) |
+| Can low-risk accounts be reconciled quarterly instead of monthly? | [Account Reconciliation](sample-map/objects/bookkeeping/account-reconciliation.md) |
+| What changes if this client needs a payroll-liability tie-out? | [Key Balance Verification](sample-map/objects/bookkeeping/key-balance-verification.md) |
+| What changes if a smaller client uses a lower variance threshold? | [Bookkeeping Review](sample-map/objects/bookkeeping/bookkeeping-review.md) |
+| What must happen before a delivered month can be reopened? | [Report Delivery](sample-map/objects/bookkeeping/report-delivery.md) |
+| Is `Old Close Checklist.xlsx` still controlling the close? | [Old Close Checklist](sample-map/objects/bookkeeping/old-close-checklist.md) |
+
+Each page tells the reader what the control owns, which source proves it, what else the proposed change touches, which nearby work it does **not** touch, and when to stop. For any other change, use the [change-impact catalog](sample-map/effects/CONTEXT.md).
 
 ## See it before you use it
 
@@ -20,7 +33,7 @@ Choose a change such as:
 
 The demo shows which close step to update first, what else must change, what can remain unchanged, and which decisions belong with the client’s CPA or another authorized reviewer.
 
-## The monthly-close workflow
+## The territory being mapped
 
 | Step | The bookkeeper can call it complete when… |
 |---|---|
@@ -34,7 +47,7 @@ The demo shows which close step to update first, what else must change, what can
 
 The repository also identifies `Old Close Checklist.xlsx` as retired. Its name looks official, but updating it does not update the current close.
 
-## Start with the part you want to change
+## Find a control by name
 
 | If your firm wants to change… | Start here |
 |---|---|
@@ -59,7 +72,7 @@ There are two ways to use this repository:
 
 ### Adapt the example
 
-Start in [`demo-territory/client-workspace/`](demo-territory/client-workspace/). Replace the fictional requirements, owners, review rules, and delivery details with sanitized versions of your own. Then update only the corresponding pages in [`sample-map/objects/bookkeeping/`](sample-map/objects/bookkeeping/).
+Start in [`demo-territory/client-workspace/`](demo-territory/client-workspace/). It is a privacy-safe reconstruction of recurring monthly-close work directly operated and supervised during more than twenty years of controllership. The example client, identifiers, dates, and record contents are synthetic; the operating boundaries, handoffs, controls, and naming collisions reflect real close work. Replace them with sanitized versions of your own, then update only the corresponding pages in [`sample-map/objects/bookkeeping/`](sample-map/objects/bookkeeping/).
 
 ### Map an existing close folder
 
@@ -71,7 +84,7 @@ Do not upload client names, account numbers, credentials, payroll details, tax i
 
 ```text
 cartographer/       Reusable instructions for mapping another close folder
-demo-territory/     Fictional but realistic July close records
+demo-territory/     Privacy-safe reconstruction of recurring close work
 sample-map/         The finished guide to that example close
 audit/              The initial file inventory
 validate_close_map.py
